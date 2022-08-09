@@ -1,0 +1,132 @@
+.navbar {
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  transition: 1s ease;
+  background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+
+  &.scrolled {
+    background-color: var(--main-color);
+    transition: 1s ease;
+  }
+
+  /* The sidebar menu */
+  .sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: var(--main-color);
+    /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 1s ease; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+  .sidebar a {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 8px 8px 8px 32px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  .container {
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 25px;
+        margin-right: 40px;
+      }
+
+      span {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin: 0px 15px;
+        cursor: pointer;
+      }
+
+      .nav-icon {
+        display: none;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      .profile {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          border-radius: 5px;
+        }
+
+        span {
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .container .left a {
+    display: none;
+  }
+  .navbar .container .right .icon {
+    display: none;
+  }
+  .navbar .container .right span {
+    display: none;
+  }
+  .navbar .container .right .nav-icon {
+    display: block !important;
+  }
+  .navbar .container {
+    padding: 0px 25px;
+  }
+}
